@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import avatar from "../img/user-male.png";
+import Skeleton from 'react-loading-skeleton';
+
 
 const Card = () => {
   const [user, setUser] = useState([]);
@@ -15,6 +17,7 @@ const Card = () => {
     console.log(data);
     return data;
   };
+
   return (
     <>
       <div className="container">
@@ -58,7 +61,8 @@ const Card = () => {
               );
             })
           ) : (
-            <p>Loading...</p>
+             <Skeleton count={15} height={100}/>
+            
           )}
         </div>
       </div>
